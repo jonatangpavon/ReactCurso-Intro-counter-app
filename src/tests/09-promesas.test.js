@@ -16,5 +16,21 @@ describe('Pruebas con promesas', () => {
             }
 
         );        
+    })
+
+
+    test('getHeroeByIdAsync debe de retornar No se pudo encontrar el héroe', ( done) => {
+        //Nota se usa catch en vez de then
+        const id = 18;
+        getHeroeByIdAsync(id)
+        .catch(
+            error =>{
+                expect(error).toBe('No se pudo encontrar el héroe');
+                done();
+            }
+
+        );        
     });
+
 });
+
